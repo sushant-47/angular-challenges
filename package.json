@@ -9,7 +9,9 @@
     "test": "nx test",
     "prepare": "husky install",
     "doc:dev": "cd docs && pnpm exec pnpm run dev",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "build:netlify": "nx build rxjs-hold-to-save-button && npm run move-dist",
+    "move-dist": "mv ./dist/apps/rxjs/49-hold-to-save-button/browser/* ./dist/"
   },
   "engines": {
     "node": ">=20.19.6"
